@@ -1,0 +1,36 @@
+.button
+{
+    background-color: blue;
+    border: none;
+    color: white;
+    padding: 15px;
+    margin: 50px;
+    font-family: 'Lato Black';
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+}
+.input
+{
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-color: blue;
+    margin:auto;
+    outline-width:0;
+}
+
+.company_name
+{
+    font-family:'Lato Black',sans-serif;
+    color:darkblue;
+    font-size:225%;
+    padding:30px;
+    margin-top: 20px;
+}
+
+.regular_text
+{
+    font-family:'Lato Black',sans-serif
+}

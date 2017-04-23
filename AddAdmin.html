@@ -1,0 +1,40 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>
+        AddAdmin
+    </title>
+    <link rel="stylesheet" type="text/css" href="Styles.css">
+</head>
+
+<body class="regular_text">
+    <form action="addadmin.php" method="post">
+
+        <table cellpadding="5">
+            <tr>
+                <th style="color: blue;text-align:left;font-family: 'Lato Black', sans-serif" colspan="2">
+                    Add Admin
+                </th>
+            </tr>
+            <tr valign="bottom">
+                <td style="padding-top:30px ">Username:</td>
+                <td><label>
+                    <input type="text" name="username" style="border-top:none;border-left: none;border-right: none;border-color: blue;margin:auto;outline-width:0;" required autofocus autocomplete=off>
+                </label></td>
+            </tr>
+            <tr><td>Password:</td> <td><label>
+                <input type="text"
+                       style="border-top:none;border-left: none;border-right: none;border-color: blue;margin:auto;outline-width:0;"
+                       name="password" required autocomplete=off>
+            </label></td></tr>
+            <tr>
+                <td style="padding-top: 30px" colspan="2" align="center">
+                    <input type="submit" style="background-color:blue;border:none;color:white;padding-top: 10px;padding-bottom:10px;padding-left: 100px;padding-right:100px;font-family: 'Lato Black';font-size:105%;text-align:center;text-decoration:none;display:inline-block;cursor:pointer" value="Add">
+                </td>
+            </tr>
+        </table>
+
+    </form>
+</body>
+</html>

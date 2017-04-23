@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Products</title>
+    <link rel="stylesheet" type="text/css" href="Styles.css">
+    <style>
+        a:link
+        {
+            text-decoration:none;
+            color:blue;
+        }
+        a:visited
+        {
+            text-decoration:none;
+            color:blue;
+        }
+        a:hover
+        {
+            text-decoration:none;
+            color:green;
+        }
+        a:active
+        {
+            text-decoration:none;
+            color: red;
+        }
+    </style>
+    <script>
+            function changeImage()
+            {
+                var x = document.getElementById("image_url").value;
+                var image =  document.getElementById("image");
+                image.src = "photos\\"+x;
+            }
+    </script>
+</head>
+
+<body class="regular_text">
+    <form method="post" action="addproduct.php">
+        <table align="center" cellpadding="10">
+            <tr>
+                <th>Product Id:</th>
+                <td><label>
+                    <input type="number" class="input" name="product_id" required autofocus>
+                </label></td>
+            </tr>
+
+            <tr>
+                <th>Category:</th>
+                <td>
+                    <label>
+                        <select name="category">
+                            <option name="wall_clock">Wall Clock</option>
+                            <option name="family_photo_frame">Family Photo Frame</option>
+                            <option name="mandir">Mandir</option>
+                            <option name="lighting_frames">Lighting Frames</option>
+                        </select>
+                    </label>
+                </td>
+            </tr>
+
+            <tr>
+                <th>
+                    Brand Name:
+                </th>
+                <td>
+                    <label>
+                        <select name="brand_name">
+                            <option name="ajanta">Ajanta</option>
+                            <option name="orpat">Orpat</option>
+                            <option name="quartz">Quartz</option>
+                        </select>
+                    </label>
+                </td>
+            </tr>
+
+            <tr>
+                <th>
+                    Size:
+                </th>
+                <td>
+                    <label>
+                        <input type="text" class="input" name="size" required>
+                    </label>
+                </td>
+            </tr>
+
+            <tr>
+                <th>Price:</th>
+
+                <td>
+                    <label>
+                        <input type="number" class="input" name="price" required>
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    Image:
+                </th>
+                <td>
+                    <label for="image_url"></label><select id="image_url" name="image_url" onchange="changeImage()" required>
+                    </select>
+
+                    <script>
+                        var xmlHttp = new XMLHttpRequest();
+                        xmlHttp.open( "GET","http://localhost:8383/Jobson/show_images.php", false); // false for synchronous request
+                        xmlHttp.send( null );
+                        var files=xmlHttp.responseText;
+                        files = files.split(" ");
+                        var x = document.getElementById("image_url");
+                        var i=0;
+                        for(i=0;i<files.length;i++)
+                        {
+                            var option = document.createElement("option");
+                            option.text = files[i];
+                            option.value = files[i];
+                            x.add(option);
+                        }
+                    </script>
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align: center" colspan="2">
+                    <img id="image" src="" height="100" width="100">
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    Desctription:
+                </th>
+                <td>
+                    <label>
+                        <textarea name="description" cols="20" rows="5" wrap="soft"
+                                  style="border-color: blue"> </textarea>
+                    </label>
+                </td>
+            </tr>
+
+                <td colspan="2" style="padding-left:15%"><input type="submit" value="Add Product" class="button"></td>
+            </tr>
+
+        </table>
+    </form>
+
+
+</body>
+</html>
